@@ -1,0 +1,23 @@
+const router=require('express').Router()
+const user=require('../controller/user')
+const admin=require('../controller/admin')
+const weather=require('../controller/weather')
+
+
+router.get('/GetAdmin',admin.GetAdmin)
+router.post('/createUser',user.createUser)
+router.get('/getUserById/:id',user.getUserById)
+router.get('/getAllUser',admin.getAllUser)
+router.put('/updateUser/:id',user.updateUser)
+router.get('/loginUser/:id',user.loginUser)
+router.post('/createAdmin/',admin.createAdmin)
+router.get('/loginAdmin/:id',admin.loginAdmin)
+router.put('/updateAdmin/:id',admin.updateAdmin)
+router.post('/createAdmin',admin.createAdmin)
+router.delete('/deleteUser/:id',admin.deleteUser)
+router.post('/createWeather/:id/:city',weather.createWeather)
+router.get('/getWeather',weather.getWeather)
+router.delete('/deleteUser/:id',admin.deleteUser)
+router.delete('/deleteWeather/:id',weather.deleteWeather)
+router.get('/getWeathersByUserId/:id',weather.getWeathersByUserId)
+module.exports=router
